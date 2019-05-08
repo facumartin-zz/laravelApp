@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tasks;
 class TasksController extends Controller
+
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,11 @@ class TasksController extends Controller
      */
     public function index()
     {
-      $tasks=Tasks::orderBy('id','DESC')->paginate(3);
-        return view('index',compact('tasks'));
-        //
+
+    echo "Lista de tareas";
+    echo $tasks=Tasks::orderBy('id','DESC')->paginate(3);
+    return view('index',compact('tasks'));
+
     }
 
     /**
